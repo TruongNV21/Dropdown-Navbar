@@ -58,7 +58,7 @@ nav .navbar .logo a{
     width: 22px;
     text-align: center;
     line-height: 70px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .nav-links .links li:hover .arrow-down.htmlcss-arrow,
@@ -71,7 +71,7 @@ nav .navbar .logo a{
 /* =======SUBMENU======= */
 
 .link-item .sub-menu{
-    display: none;
+    display: block;
     position: absolute;
     min-width: 90%;
     top: 70px;
@@ -79,19 +79,49 @@ nav .navbar .logo a{
     background-color: var(--primery-color);
     border-radius: 0 0 6px 6px;
     box-shadow: 0 2px 2px  rgba(0, 0, 0, 0.8);
-    transition: all 1s ease;
 }
-
+/* ========Animation Dropdown Each Item=========== */
+.sub-menu .sub-item-1{
+    animation: rotateX 240ms 60ms ease-in-out forwards;
+    transform-origin: top center;
+}
+.sub-menu .sub-item-2{
+    animation: rotateX 240ms 120ms ease-in-out forwards;
+    transform-origin: top center;
+}.sub-menu .sub-item-3{
+    animation: rotateX 240ms 180ms ease-in-out forwards;
+    transform-origin: top center;
+}.sub-menu .sub-item-4{
+    animation: rotateX 240ms 240ms ease-in-out forwards;
+    transform-origin: top center;
+}
+/* ========================================= */
 .link-item .sub-menu li:last-child{
     border-bottom: 0px;
 }
 
-.link-item .sub-menu li{
-    /* width: 100%; */
+.link-item .sub-menu .sub-item{
+    display: none;
+    opacity: 0;
     position: relative;
     line-height: 40px;
     padding: 6px 14px;
+    transform: rotateX(0);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.link-item .sub-menu .more-sub-item{
+    position: relative;
+    line-height: 40px;
+    padding: 6px 14px;
+    transform: rotateX(0);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.links .link-item:hover .sub-item,
+.links .link-item:hover .sub-menu{
+    display: block;
 }
 
 .link-item .sub-menu a{
@@ -104,20 +134,18 @@ nav .navbar .logo a{
 .nav-links .links li:hover .sub-menu.js-sub-menu{
     display: block;
     cursor: pointer;
-    height: auto;
-    opacity: 1;
 }
 
 .link-item .sub-menu .arrow.more-arrow{
     line-height: 40px;
 }
 
-.link-item .sub-menu .more .more-sub-menu{
-    position: absolute;
+.link-item .more .sub-menu.more-sub-menu{
+    display: none;
     top: 0; 
     left: 100%;
+    position: absolute;
     border-radius: 0 4px 4px 4px;
-    display: none;
     transition: all 0.5s ease;
 }
 
@@ -134,3 +162,48 @@ nav .navbar .logo a{
     transform: rotate(180deg);
 }
 
+
+/* ==========Search-box========= */
+
+.navbar .search-box{
+    position: relative; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search__container{
+    height: 30px;
+    margin: auto;
+    display: flex;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+
+
+}
+.navbar .search-box i{
+    height: 100%;
+    /* padding: 4px; */
+    line-height: 30px;
+    font-size: 2.2rem;
+    color: #fff; 
+    font-weight: 600;
+    padding: 0 6px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 4px;
+}
+
+.navbar .search-box .input-box{
+    padding-left: 8px;
+    background-color: #fff;
+}
+
+.navbar .search-box input{
+    font-size: 1.6rem;
+    width: 240px;
+    height: 100%;
+    border-style: none;
+    background-color: #fff;
+    outline: none;
+}
